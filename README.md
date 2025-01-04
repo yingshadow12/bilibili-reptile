@@ -11,7 +11,7 @@
 ## 环境要求
 
 - Python环境：需要Python解释器。
-- 依赖库：以下是项目所需的Python依赖库及其具体版本。
+- 依赖库：`requirements.txt`文件里是项目所需的Python依赖库及其具体版本。
 
 ## 安装指南
 
