@@ -73,13 +73,21 @@ def down_func(url_1):
     result = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
     # 打印输出和错误
-    print(result.stdout.decode())
+    print(result.stderr.decode())
 
-    # 检查命令是否成功执行
-    if result.returncode == 0:
-        print("FFmpeg 命令执行成功")
+    # 假设 ffmpeg_output 是你的 ffmpeg 命令的输出字符串
+    ffmpeg_output = result.stderr.decode()# stddrr [out#
+
+    # 检查输出中是否包含 "[out"
+    if "[out" in ffmpeg_output:
+        print("成功")
     else:
-        print("FFmpeg 命令执行失败，错误码:", result.returncode)
+         print("失败")
+    # 检查命令是否成功执行
+    # if result.returncode == 0:
+    #     print("FFmpeg 命令执行成功")
+    # else:
+    #     print("FFmpeg 命令执行失败，错误码:", result.returncode)
 
     print('结束合成视频')
     print('~'*50)
