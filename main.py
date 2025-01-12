@@ -15,12 +15,10 @@ def Automatic_harvester():
     # 读取json文件
     # with open('data_mid.json') as f:
     #     up_ids = json.load(f)
-    #     f.close()
     
     # 收藏夹fid处理
     with open('data_lst_id.json') as f:
         favorites_data = json.load(f)
-        f.close()
 
     # print('mid',up_ids)
     # print('收藏夹fid',favorites_data)
@@ -93,8 +91,7 @@ def Automatic_harvester():
         print('-'*100)
         print("采集过的位置列表已更新")
         print("任务完成，自动化收割机已休眠，5s后进行下一次采集")
-        print('-'*100,"\n\n\n")
-        time.sleep(5)
+        print('-'*100,"\n")
 if __name__ == '__main__':
     # 设置定时任务，每隔 5 秒钟执行一次 Automatic_harvester 函数，需要的可以设为3600秒（一小时运行一次）
     schedule.every(s).seconds.do(Automatic_harvester)
