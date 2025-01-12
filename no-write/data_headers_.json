@@ -1,0 +1,5 @@
+{
+    "Cookie": "输入你的b站的Cookie，网络请求中找web开头的所有Cookie",
+    "Referer": "https://search.bilibili.com/",
+    "User-Agent": "输入你的User-Agent，网络请求中随便找一个请求中找User-Agent"
+}
