@@ -2,6 +2,7 @@ import re
 import time
 import requests
 import schedule
+import json
 import download_main
 
 # 设置每隔 多少 秒钟执行一次
@@ -9,8 +10,6 @@ s = 5
 
 print("bilibili指定视频自动化收割机启动，收割时间间隔为",s,'s')
 def Automatic_harvester():
-    print('='*99)
-    import json
 
     # 读取json文件
     # with open('data_mid.json') as f:
@@ -18,10 +17,10 @@ def Automatic_harvester():
     
     # 收藏夹fid处理
     with open('data_lst_id.json') as f:
-        favorites_data = json.load(f)
+        favorites_ids = json.load(f)
 
     # print('mid',up_ids)
-    # print('收藏夹fid',favorites_data)
+    # print('收藏夹fid',favorites_ids)
 
     # 遍历每个uid和mid，拼接API URL并添加到urls数组中
     urls = []
@@ -31,7 +30,7 @@ def Automatic_harvester():
     #     urls.append(url)
 
     # 收藏夹的fid调用api：：https://api.bilibili.com/x/v3/fav/resource/list?media_id=2542724062&pn=1&ps=20&keyword=&order=mtime&type=0&tid=0&platform=web
-    for fid in favorites_data:
+    for fid in favorites_ids:
         url = "https://api.bilibili.com/x/v3/fav/resource/list?media_id=" + fid + "&pn=1&ps=20&keyword=&order=mtime&type=0&tid=0&platform=web"
         urls.append(url)
 
