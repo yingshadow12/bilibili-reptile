@@ -1,0 +1,5 @@
+{
+    "Cookie": "按f12进入开发者模式后网络中web开头的文件下有cookie，替换这行文字，放在两端的两个双引号中间",
+    "Referer": "https://search.bilibili.com/",
+    "User-Agent": "按f12进入开发者模式后网络中web开头的文件下有User-Agent，替换这行文字，放在两端的两个双引号中间"
+}

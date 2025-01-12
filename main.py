@@ -19,6 +19,10 @@ def Automatic_harvester():
     with open('data_lst_id.json') as f:
         favorites_ids = json.load(f)
 
+    # 读取headers
+    with open('data_headers_.json', 'r') as f:
+        headers_ = json.load(f)    
+    
     # print('mid',up_ids)
     # print('收藏夹fid',favorites_ids)
 
@@ -34,18 +38,10 @@ def Automatic_harvester():
         url = "https://api.bilibili.com/x/v3/fav/resource/list?media_id=" + fid + "&pn=1&ps=20&keyword=&order=mtime&type=0&tid=0&platform=web"
         urls.append(url)
 
-# 填入你的消息
-    headers_ = {
-        'Cookie': '''按f12进入开发者模式后网络中web开头的文件下有cookie，替换这行文字，放在两端的三个点中间''',
-        'Referer': 'https://search.bilibili.com/',
-        'User-Agent': '按f12进入开发者模式后网络中web开头的文件下有User-Agent，替换这行文字，放在两端的三个点中间',
-    }
-
-
     # 查看曾经下载过的视频
     with open('data_histo.json', 'r') as f:
         downloaded_bvids = json.load(f)
-        f.close()
+    
     # 输出
     print('已下载过的视频:', ', '.join(downloaded_bvids))
 
